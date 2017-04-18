@@ -8,6 +8,10 @@ function getPrefixes(){
   return Object.keys(data);
 }
 
+function asMap() {
+  return data;
+}
+
 function getNamespaceViaPrefix(prefix) {
   return data[prefix];
 }
@@ -30,5 +34,6 @@ function getPrefixViaNamespace(namespace) {
 module.exports = {
   getPrefixes: getPrefixes,
   getNamespaceViaPrefix: getNamespaceViaPrefix,
-  getPrefixViaNamespace: getPrefixViaNamespace
+  getPrefixViaNamespace: getPrefixViaNamespace,
+  asMap: asMap
 };

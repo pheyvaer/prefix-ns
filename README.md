@@ -11,6 +11,9 @@ let prefix-ns = require('prefix-ns');
 
 //The following method returns an array of all prefixes.
 let allPrefixes = prefix-ns.getPrefixes();
+console.log(allPrefixes);
+
+// --> ['rdf', 'foaf', ...]
 
 //The following method returns the namespace of a given prefix.
 //null is returned when the prefix is not found.
@@ -25,6 +28,12 @@ let prefix = prefix-ns.getPrefixViaNamespace('http://xmlns.com/foaf/0.1/');
 console.log(prefix);
 
 // --> foaf
+
+//The following method returns a map where the prefixes are the keys and the namesapces are the values.
+let map = prefix-ns.asMap();
+console.log(map.foaf);
+
+// --> http://xmlns.com/foaf/0.1/
 ```
 
 ## License

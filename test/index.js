@@ -27,4 +27,12 @@ describe('index', function () {
     assert.equal(prefix.getPrefixViaNamespace('http://xmlns.com/foaf/0.1/'), 'foaf');
     assert.equal(prefix.getPrefixViaNamespace('http://ffrdasfkd;ljfadlskfjad;lkfjadlkjkjfdkfjdlkfjdlkfjdflkdjflkdjfld'), null);
   });
+
+  it('asMap', function () {
+    let prefixes = prefix.asMap();
+
+    assert.equal(prefixes.rml, 'http://semweb.mmlab.be/ns/rml#');
+    assert.equal(prefixes.rr, 'http://www.w3.org/ns/r2rml#');
+    assert.equal(prefixes.foafoaf, null);
+  });
 });
