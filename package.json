@@ -1,13 +1,18 @@
 {
   "name": "prefix-ns",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Easy access to prefixes and namespaces of prefix.cc.",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec",
     "preinstall": "node preinstall.js"
   },
-  "keywords": ["prefix", "namespace", "mapping", "prefix.cc"],
+  "keywords": [
+    "prefix",
+    "namespace",
+    "mapping",
+    "prefix.cc"
+  ],
   "author": "Pieter Heyvaert <pheyvaer.heyvaert@ugent.be>",
   "license": "MIT",
   "devDependencies": {
