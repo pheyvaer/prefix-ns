@@ -1,6 +1,6 @@
 {
   "name": "prefix-ns",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Easy access to prefixes and namespaces of prefix.cc.",
   "main": "index.js",
   "scripts": {
