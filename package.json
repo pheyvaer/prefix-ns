@@ -7,6 +7,7 @@
     "test": "./node_modules/.bin/mocha --reporter spec",
     "preinstall": "node preinstall.js"
   },
+  "keywords": ["prefix", "namespace", "mapping", "prefix.cc"],
   "author": "Pieter Heyvaert <pheyvaer.heyvaert@ugent.be>",
   "license": "MIT",
   "devDependencies": {
