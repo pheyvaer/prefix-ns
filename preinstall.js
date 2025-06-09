@@ -5,7 +5,7 @@
 let http = require('http');
 let fs = require('fs');
 
-http.get('http://prefix.cc/context', (res) => {
+const request = http.get('http://prefix.cc/context', (res) => {
   const { statusCode } = res;
 
   if (statusCode === 200) {
@@ -23,3 +23,14 @@ http.get('http://prefix.cc/context', (res) => {
     });
   }
 });
+
+request.on('error', (err) => {
+  if (!isCompleted) {
+    isCompleted = true;
+    console.error('Request error:', err.message);
+    console.error('Error code:', err.code);
+    console.error('Failed to fetch data from http://prefix.cc/context');
+    process.exit(0);
+  }
+});
+
