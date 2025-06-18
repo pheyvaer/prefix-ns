@@ -8,7 +8,7 @@ A default dump (`data.json`) is available if the download of the dump fails.
 ## Usage
 
 ```$JavaScript
-const prefixns = require('prefix-ns');
+import * as prefixns from 'prefix-ns';
 
 //The following method returns an array of all prefixes.
 const allPrefixes = prefixns.getPrefixes();
