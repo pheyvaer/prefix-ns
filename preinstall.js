@@ -2,24 +2,21 @@
  * Created by pheyvaer on 18.04.17.
  */
 
-const https = require('https');
-const fs = require('fs');
+import fs from 'fs-extra';
+const url = 'https://prefix.cc/context';
 
-https.get('https://prefix.cc/context', (res) => {
-  const { statusCode } = res;
+try {
+  const response = await fetch(url);
 
-  if (statusCode === 200) {
-    res.setEncoding('utf8');
-    let rawData = '';
-    res.on('data', (chunk) => { rawData += chunk; });
-    res.on('end', () => {
-      try {
-        //const parsedData = JSON.parse(rawData);
-        //console.log(parsedData);
-        fs.writeFileSync('data.json', rawData);
-      } catch (e) {
-        console.error(e.message);
-      }
-    });
+  if (response.ok) {
+    const data = await response.json();
+    await fs.writeJson('data.json', data, {spaces: 2});
+  } else {
+    throw Error(`Request returned status code: ${response.status}`);
   }
-});
+} catch (err) {
+  console.error('Failed to fetch data from ' + url);
+  console.error('Error:', err.message);
+
+  process.exit(0);
+}

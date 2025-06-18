@@ -2,21 +2,23 @@
  * Created by pheyvaer on 18.04.17.
  */
 
-const data = require('./data.json')["@context"];
+import fs from 'fs-extra';
 
-function getPrefixes(){
+const data = (await fs.readJson('data.json'))["@context"];
+
+export function getPrefixes(){
   return Object.keys(data);
 }
 
-function asMap() {
+export function asMap() {
   return data;
 }
 
-function getNamespaceViaPrefix(prefix) {
+export function getNamespaceViaPrefix(prefix) {
   return data[prefix];
 }
 
-function getPrefixViaNamespace(namespace) {
+export function getPrefixViaNamespace(namespace) {
   const prefixes = Object.keys(data);
   let i = 0;
 
@@ -30,10 +32,3 @@ function getPrefixViaNamespace(namespace) {
     return null;
   }
 }
-
-module.exports = {
-  getPrefixes: getPrefixes,
-  getNamespaceViaPrefix: getNamespaceViaPrefix,
-  getPrefixViaNamespace: getPrefixViaNamespace,
-  asMap: asMap
-};

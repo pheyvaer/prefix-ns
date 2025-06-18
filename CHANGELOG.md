@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Package lock
 - Changelog
+- Handle timeout errors in preinstall.js (based on https://github.com/pheyvaer/prefix-ns/pull/1)
 
 ### Changed
 
@@ -18,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Use https for URLs
 - Update dump
 - Example in README
+- Use module instead of commonjs
 
 ## 0.1.2 - 2017-04-27
 

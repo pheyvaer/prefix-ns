@@ -2,12 +2,12 @@
  * Created by pheyvaer on 18.04.17.
  */
 
-let assert = require('chai').assert;
-let prefix = require('../index.js');
+import {assert} from 'chai';
+import * as prefix from '../index.js';
 
 describe('index', function () {
   it('getPrefixes', function () {
-    let prefixes = prefix.getPrefixes();
+    const prefixes = prefix.getPrefixes();
 
     assert.notEqual(prefixes.indexOf('rml'), -1);
     assert.notEqual(prefixes.indexOf('rr'), -1);
@@ -29,7 +29,7 @@ describe('index', function () {
   });
 
   it('asMap', function () {
-    let prefixes = prefix.asMap();
+    const prefixes = prefix.asMap();
 
     assert.equal(prefixes.rml, 'http://semweb.mmlab.be/ns/rml#');
     assert.equal(prefixes.rr, 'http://www.w3.org/ns/r2rml#');
