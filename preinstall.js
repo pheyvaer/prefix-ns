@@ -2,10 +2,10 @@
  * Created by pheyvaer on 18.04.17.
  */
 
-let http = require('http');
-let fs = require('fs');
+const https = require('https');
+const fs = require('fs');
 
-http.get('http://prefix.cc/context', (res) => {
+https.get('https://prefix.cc/context', (res) => {
   const { statusCode } = res;
 
   if (statusCode === 200) {

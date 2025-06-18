@@ -2,7 +2,7 @@
  * Created by pheyvaer on 18.04.17.
  */
 
-let data = require('./data.json')["@context"];
+const data = require('./data.json')["@context"];
 
 function getPrefixes(){
   return Object.keys(data);
@@ -17,7 +17,7 @@ function getNamespaceViaPrefix(prefix) {
 }
 
 function getPrefixViaNamespace(namespace) {
-  let prefixes = Object.keys(data);
+  const prefixes = Object.keys(data);
   let i = 0;
 
   while (i < prefixes.length && data[prefixes[i]] !== namespace) {
