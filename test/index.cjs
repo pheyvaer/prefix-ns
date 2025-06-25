@@ -2,10 +2,10 @@
  * Created by pheyvaer on 18.04.17.
  */
 
-import {assert} from 'chai';
-import * as prefix from '../index.js';
+const assert = require('chai').assert;
+const prefix = require('../index.cjs')
 
-describe('ES Module', function () {
+describe('CommonJS', function () {
   it('getPrefixes',  function () {
     const prefixes = prefix.getPrefixes();
 

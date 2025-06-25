@@ -37,5 +37,12 @@ console.log(map.foaf);
 // --> http://xmlns.com/foaf/0.1/
 ```
 
+If you want to use `require`, 
+you do
+
+```javascript
+const prefixns = require('prefix-ns/index.cjs');
+```
+
 ## License
 MIT

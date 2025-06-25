@@ -3,32 +3,14 @@
  */
 
 import fs from 'fs-extra';
+import * as path from "node:path";
+import * as utils from "./utils.cjs";
 
-const data = (await fs.readJson('data.json'))["@context"];
+const data = (await fs.readJson(path.join(import.meta.dirname, 'data.json')))["@context"];
 
-export function getPrefixes(){
-  return Object.keys(data);
-}
+const getPrefixes = () => {return utils.getPrefixes(data)};
+const asMap = () => { return data; };
+const getNamespaceViaPrefix = (prefix) => {return utils.getNamespaceViaPrefix(prefix, data)};
+const getPrefixViaNamespace = (prefix) => {return utils.getPrefixViaNamespace(prefix,data)};
 
-export function asMap() {
-  return data;
-}
-
-export function getNamespaceViaPrefix(prefix) {
-  return data[prefix];
-}
-
-export function getPrefixViaNamespace(namespace) {
-  const prefixes = Object.keys(data);
-  let i = 0;
-
-  while (i < prefixes.length && data[prefixes[i]] !== namespace) {
-    i ++;
-  }
-
-  if (i < prefixes.length) {
-    return prefixes[i];
-  } else {
-    return null;
-  }
-}
+export {getPrefixes, asMap, getNamespaceViaPrefix, getPrefixViaNamespace};
